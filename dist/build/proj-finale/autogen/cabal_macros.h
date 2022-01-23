@@ -11,6 +11,17 @@
   (major1) == 0 && (major2) == 2 && (minor) <= 0)
 #endif /* MIN_VERSION_proj_finale_v03 */
 
+/* package proj-finale-v03-0.2.0.0 */
+#ifndef VERSION_proj_finale_v03
+#define VERSION_proj_finale_v03 "0.2.0.0"
+#endif /* VERSION_proj_finale_v03 */
+#ifndef MIN_VERSION_proj_finale_v03
+#define MIN_VERSION_proj_finale_v03(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  2 || \
+  (major1) == 0 && (major2) == 2 && (minor) <= 0)
+#endif /* MIN_VERSION_proj_finale_v03 */
+
 /* package base-4.12.0.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.12.0.0"
@@ -154,11 +165,8 @@
   (major1) == 2 && (major2) == 34 && (minor) <= 0)
 #endif /* MIN_TOOL_VERSION_strip */
 
-#ifndef CURRENT_PACKAGE_KEY
-#define CURRENT_PACKAGE_KEY "proj-finale-v03-0.2.0.0-5yUOzQYZbo3LB5mF7UXbk0-animation"
-#endif /* CURRENT_PACKAGE_KEY */
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "proj-finale-v03-0.2.0.0-5yUOzQYZbo3LB5mF7UXbk0-animation"
+#define CURRENT_COMPONENT_ID "proj-finale-v03-0.2.0.0-5yUOzQYZbo3LB5mF7UXbk0-proj-finale"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.2.0.0"
