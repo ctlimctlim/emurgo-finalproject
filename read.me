@@ -1,0 +1,79 @@
+Project Synopsis:
+
+This project serves as part of the final deliverables for the Cardano Development
+Associate module (batch 37) conducted by Eumurgo. It is an attempt to enhance of 
+a existing program (io-project) by incorporating more advance functions of Haskell 
+and newer/other features to the original program
+
+Understanding of project requirements:
+
+Base:
+1) Demonstrate the use of Cabal to run a program
+2) Use of Monad and Monad Transformers namely Writer, State, Reader and IO to:
+    a. implement logging (using writer effect)
+    b. provide state transformation (using the state effect)
+    c. provide constants (using reader effect)
+    d. to demonstrate the animation (using the IO effect)
+
+Additional:
+3) To add additional features to the orginal program to enable
+    the use to also to input the following:  
+    a. maximum speed
+    b. acceleration factor
+    c. number of moves (iterations) to exit the program properly
+
+Program Overview:
+
+1)  The program consist of the following code files:
+    a. Main.hs - mian execution of program
+    b. State.hs - implmentation the changing of state (position, direction and speed)
+    c. Draw.hs - implmentation the 'drawing' of the enclosure and the ball for each iteration
+    d. CLI.hs - implmentation of commnad line interface to input the various parameters of the program
+    e. Auxiliary.hs - essentailly helper functions to clear screen, translate speed into thread delays
+
+2)  Parameters to input in CLI when running the program
+
+The argument format is frameX frameY maxSpeed accelerate numofMoves posX posY dirX dirY nowSpeed:
+
+s/n param       data    description                     range 
+--- -----       ----    -----------                     -----
+1) frameX       Env     width of frame                  undefined
+2) frameY       Env     height of frame                 undefined
+3) maxSpeed     Env     max. speed of ball              1 ~ 1000 (units of speed) 
+4) accelerate   Env     % increase based current speed  1 ~ 100 (percentage increase) 
+5) numofMoves   Env     no. of ball-moves to simulate   undefined
+6) posX         State   initial x position of ball      Within range of frameX 
+7) posY         State   initial y position of ball      Within range of frameY 
+8) dirX         State   x direction vector of bal       -1 || 0 || 1
+9) dirY         State   y direction vector of ball      -1 || 0 || 1
+10)nowSpeed     State   initial/current speed of ball   1 ~ 1000 or maxSpeed (whichever smaller)
+
+*example of run: cabal run [excutable program name] 30 20 800 50 200 6 6 1 1 500
+
+**Note the program (at this point) do not include validation of the input 
+parameters (opportunity for further enhancement) 
+
+Challenges faced:
+
+1)  Transiting from 30 years ago imperative programming (mindset) to functional programming
+2)  Use of various Haskell syntax for example:
+    a)  The use of do statement - have challenging trying to make sure that line with do statement
+        need to be of the same "type" level and eventually the use of 'lift' to do that.
+    b)  Didn't know certain variables type need not be declared right from the beginning as
+        Haskell (through type mathcing) knows what type it is (using let statement)
+3)  Monads and monad Transformers
+    a)  extremly challenging in tyring to grasp the concepts of functors, applicatives, Monads
+        and Monads Transformers
+    b)  the implementation in executing Monad Transformers - knowing how to combine the various
+        runWriter, runState and runReader and its respective returns. Order of run has to be right.
+
+Future Enhancement to program:
+
+1) More interactive CLI for the input of the parameters (questions and user input 
+    for each parameter)
+2) Validation of parameters (ensuring that they are within the acceptable range)
+3) Maybe implementation of an proper 'intercept' to stop animation by pressing any key.
+4) To display more information during the animation - for exampel displaying 
+    real-time speed and acceleration display 
+
+
