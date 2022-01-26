@@ -1,6 +1,6 @@
 module Animation.Auxiliary where
 
--- clearScreen - clear the screen before each drawing of the state
+-- clearScreen - clear the screen
 
 clearScreen :: IO ()
 clearScreen = putStr "\ESC[3J\ESC[1;1H"

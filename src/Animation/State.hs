@@ -17,7 +17,6 @@ data MyState = MyState { position :: Vector, direction :: Vector, velocity :: Fl
 data Env = Env { frame :: Vector, maxspeed :: Float, acceleration :: Float, numofmoves :: Int} --, chargeSpeedF :: Int } -- chargeSpeed :: Int (for later)}
   deriving (Show)
 
---------------------------------------------------------------------------------
 -- next to calculate the next position and direction of the ball
 
 next :: (Monad m) => WriterT String (StateT MyState (ReaderT Env m)) ()

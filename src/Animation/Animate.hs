@@ -15,8 +15,7 @@ import Control.Monad.Trans.Class (lift)
 -- There are 4 monads: Writer, State, Reader and IO
 type AppM a = WriterT String (StateT MyState (ReaderT Env IO )) a
 
---------------------------------------------------------------------------------
--- animateS to perform the animation 
+-- animateS to perform the animation
 
 -- The no. of iterations of (animation) needs to be fixed (using countdown)
 -- so that program can terminate and get the log out!

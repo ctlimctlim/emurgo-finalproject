@@ -4,7 +4,6 @@ import Animation.State
 
 import System.Environment (getArgs)
 
---------------------------------------------------------------------------------
 -- cli to obtain parameters for initial state, environment and other prarameters
 
 cli :: IO (Env, MyState)

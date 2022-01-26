@@ -6,7 +6,6 @@ import Control.Monad.Trans.State.Lazy
 import Control.Monad.Trans.Reader
 import Control.Monad.Trans.Class (lift)
 
---------------------------------------------------------------------------------
 -- drawState - to 'paint' the enclosure and positionof the ball
 
 drawState :: Monad m => StateT MyState (ReaderT Env m) String 

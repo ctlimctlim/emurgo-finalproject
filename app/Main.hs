@@ -9,8 +9,7 @@ import Animation.Animate (animateS)
 import Animation.CLI (cli)
 import Animation.State
 
---------------------------------------------------------------------------------
--- main
+-- main --
 
 main :: IO ()
 main = do
