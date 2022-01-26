@@ -30,10 +30,10 @@ main = do
         -- StateT MyState (ReaderT Env IO ) ((),String)
         
         unwrapState  = evalStateT unwrapWriter mstate
-        --  stateOut :: ReaderT Env IO  ((),String)
+        --  unwrapState :: ReaderT Env IO  ((),String)
         
         unwrapReader = runReaderT unwrapState env
-        --  readerOut :: IO  ((),String)
+        --  unwrapReader :: IO  ((),String)
         
 
     (_,log) <- unwrapReader -- get the String out (log)

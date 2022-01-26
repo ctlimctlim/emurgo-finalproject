@@ -7,9 +7,6 @@ import System.Environment (getArgs)
 --------------------------------------------------------------------------------
 -- cli to obtain parameters for initial state, environment and other prarameters
 
--- (>>=) :: IO a -> (a -> IO b) -> IO b
--- return :: a -> IO a
-
 cli :: IO (Env, MyState)
 -- cli = getArgs >>= (\unparsedArgs -> return (parseArgs unparsedArgs))
 cli = fmap parseArgs getArgs

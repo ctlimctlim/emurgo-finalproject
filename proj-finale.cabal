@@ -16,8 +16,8 @@ extra-source-files:  CHANGELOG.md
 -- cabal-version:       >=1.10
 
 library animation
-  exposed-modules:     Animation.Animate, Animation.State, Animation.CLI
-  other-modules:       Animation.Draw, Animation.Auxiliary
+  exposed-modules:     Animation.Animate, Animation.State, Animation.CLI, Animation.Auxiliary
+  other-modules:       Animation.Draw
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13, transformers
   hs-source-dirs:      src

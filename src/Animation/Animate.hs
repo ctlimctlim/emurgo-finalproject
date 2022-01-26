@@ -18,11 +18,11 @@ type AppM a = WriterT String (StateT MyState (ReaderT Env IO )) a
 --------------------------------------------------------------------------------
 -- animateS to perform the animation 
 
--- The no. of iterations of (animation) need to be fixed (using countdown)
+-- The no. of iterations of (animation) needs to be fixed (using countdown)
 -- so that program can terminate and get the log out!
 
 animateS :: Int -> AppM ()
-animateS countdown = do
+animateS iterations = do
     
     -- create lift (lift2, lift 3) by composition for easy reading
     let 
@@ -30,16 +30,16 @@ animateS countdown = do
       lift3 = lift . lift2
 
     lift3 clearScreen
-    output <- lift drawState -- get the String (the enclosure and ball) out
-    lift3 $ putStr output
+    enclosure <- lift drawState -- get the String (the enclosure and ball) out
+    lift3 $ putStr enclosure
 
     MyState {velocity = currentSpeed} <- lift get -- get current speed to calculate threadDelay
     lift3 $ threadDelay (round (getInterval currentSpeed))
     
     next -- update the next State
 
-    if countdown > 0
-      then animateS (countdown -1) -- if countdown is greater than 0 keep animating 
+    if iterations > 0
+      then animateS (iterations -1) -- if countdown is greater than 0 keep animating 
       else return () -- but if it's not, end the animation :( 
 
 --------------------------------------------------------------------------------

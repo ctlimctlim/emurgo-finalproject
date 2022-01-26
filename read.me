@@ -1,12 +1,13 @@
 Project Synopsis:
-
 This project serves as part of the final deliverables for the Cardano Development
 Associate module (batch 37) conducted by Eumurgo. It is an attempt to enhance of 
 a existing program (io-project) by incorporating more advance functions of Haskell 
 and newer/other features to the original program
 
-Understanding of project requirements:
+To view an example of the run of the program, the following command can be used:
+cabal run proj-finale 30 20 800 50 200 6 6 1 1 500
 
+Understanding of project requirements:
 Base:
 1) Demonstrate the use of Cabal to run a program
 2) Use of Monad and Monad Transformers namely Writer, State, Reader and IO to:
@@ -23,7 +24,6 @@ Additional:
     c. number of moves (iterations) to exit the program properly
 
 Program Overview:
-
 1)  The program consist of the following code files:
     a. Main.hs - mian execution of program
     b. State.hs - implmentation the changing of state (position, direction and speed)
@@ -34,7 +34,6 @@ Program Overview:
 2)  Parameters to input in CLI when running the program
 
 The argument format is frameX frameY maxSpeed accelerate numofMoves posX posY dirX dirY nowSpeed:
-
 s/n param       data    description                     range 
 --- -----       ----    -----------                     -----
 1) frameX       Env     width of frame                  undefined
@@ -48,13 +47,12 @@ s/n param       data    description                     range
 9) dirY         State   y direction vector of ball      -1 || 0 || 1
 10)nowSpeed     State   initial/current speed of ball   1 ~ 1000 or maxSpeed (whichever smaller)
 
-*example of run: cabal run [excutable program name] 30 20 800 50 200 6 6 1 1 500
+*example of run: cabal run proj-finale 30 20 800 50 200 6 6 1 1 500
 
 **Note the program (at this point) do not include validation of the input 
 parameters (opportunity for further enhancement) 
 
 Challenges faced:
-
 1)  Transiting from 30 years ago imperative programming (mindset) to functional programming
 2)  Use of various Haskell syntax for example:
     a)  The use of do statement - have challenging trying to make sure that line with do statement
@@ -68,12 +66,9 @@ Challenges faced:
         runWriter, runState and runReader and its respective returns. Order of run has to be right.
 
 Future Enhancement to program:
-
 1) More interactive CLI for the input of the parameters (questions and user input 
     for each parameter)
 2) Validation of parameters (ensuring that they are within the acceptable range)
 3) Maybe implementation of an proper 'intercept' to stop animation by pressing any key.
 4) To display more information during the animation - for exampel displaying 
     real-time speed and acceleration display 
-
-
